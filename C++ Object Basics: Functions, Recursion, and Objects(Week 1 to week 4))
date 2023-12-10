@@ -122,5 +122,569 @@ int main(int argc, char** argv) {
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 WEEK 2
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 Q1)--------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+//add function definitions below this line
+int RecursiveSum(int n) {
+  if (n == 0) {
+    return 0;
+  }
+  else {
+    return n + RecursiveSum(n - 1);
+  }
+}
+
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  cout << RecursiveSum(stoi(argv[1])) << endl;
+  return 0;
+}
+
+--------------------------------------------------------------------------------------
+Q2)
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//add function definitions below this line
+
+int ListSum(vector<int> nums) {
+  int sum = 0;
+  for (int i = 0; i < nums.size(); i++) {
+    sum += nums[i];
+  }
+  return sum;
+}
+
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  vector<int> nums;
+  for (int i = 1; i < argc; i++) {
+    nums.push_back(stoi(argv[i]));
+  }
+  cout << ListSum(nums) << endl;
+  return 0;
+}
+----------------------------------------------------------------------------------
+Q3)
+#include <iostream>
+using namespace std;
+
+//add function definitions below this line
+
+
+int BunnyEars(int n) {
+  if (n == 0) {
+    return 0;
+  }
+  else {
+    return 2 + BunnyEars(n - 1);
+  }
+}
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  cout << BunnyEars(stoi(argv[1])) << endl;
+  return 0;
+}
+---------------------------------------------------------------------------------------
+Q4)
+#include <iostream>
+using namespace std;
+
+//add function definitions below this line
+
+
+string ReverseString(string s) {
+  if (s.length() == 1) {
+    return s;
+  }
+  else {
+    return s.substr(s.length() - 1) + ReverseString(s.substr(0, s.length() - 1));
+  }
+}
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  cout << ReverseString(argv[1]) << endl;
+  return 0;
+}
+-------------------------------------------------------------------------------------
+Q5)
+#include <iostream>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+//add function definitions below this line
+
+
+int GetMax(const vector<int>& nums) {
+  if(nums.empty()) {
+    // Handle the case where the vector is empty.
+    return 0;
+  }
+
+  int max_value = nums[0];
+  for(int i = 1; i < nums.size(); i++) {
+    if(nums[i] > max_value) {
+      max_value = nums[i];
+    }
+  }
+  return max_value;
+}
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  vector<int> nums;
+  for (int i = 1; i < argc; i++) {
+    nums.push_back(stoi(argv[i]));
+  }
+  cout << GetMax(nums) << endl;
+  return 0;
+}
+-----------------------------------------------------------------------------------------------------------------
+WEEK 3
+-----------------------------------------------------------------------------------------------------------------
+Q1)
+#include <iostream>
+using namespace std;
+
+//add class definitions below this line
+class PracticeClass {
+public:
+  string name;
+};
+
+  
+//add class definitions above this line
+
+int main() {
+  
+  PracticeClass obj;
+  obj.name = "Class Object";
+  cout << obj.name;
+  
+  return 0;
+  
+}
+--------------------------------------------------------
+Q2)
+#include <iostream>
+using namespace std;
+
+//add class definitions below this line
+    
+
+  class Cat {
+  public:
+    string breed;
+    string color;
+    string name;
+  
+  Cat() {
+    breed = "American Shorthair";
+    color = "black";
+    name = "Kiwi";
+  }
+};
+//add class definitions above this line
+
+int main() {
+
+  Cat cat;
+  cout << cat.breed << endl;
+  cout << cat.color << endl;
+  cout << cat.name << endl;
+
+  return 0;
+  
+}
+---------------------------------------------------
+Q3)
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//add class definitions below this line
+    
+class Superhero {
+public:
+  string name;
+  string identity;
+  vector<string> powers;
+  
+  Superhero(string n, string i, vector<string> p) {
+    name = n;
+    identity = i;
+    powers = p;
+  }
+};
+  
+//add class definitions above this line
+
+int main() {
+
+  Superhero iron_man("Iron Man", "Tony Stark", {"armored suit", "laser beams", "flight"});
+  cout << iron_man.name << endl;
+  cout << iron_man.identity << endl;
+  for (auto a : iron_man.powers) {
+    cout << a << endl;
+  }
+
+  return 0;
+  
+}
+-------------------------------------------------------------
+Q4)
+#include <iostream>
+using namespace std;
+
+//add class definitions below this line
+    
+class Observation {
+public:
+  string date;
+  int temperature;
+  double elevation;
+  int penguins;
+  double precipitation;
+  
+  Observation(string d, int temp, double elev, int peng) {
+    date = d;
+    temperature = temp;
+    elevation = elev;
+    penguins = peng;
+    precipitation = 0;
+  }
+};
+  
+//add class definitions above this line
+
+int main() {
+
+  Observation o("October 26, 2019", -47, 329.4, 3);
+  cout << "Today is " << o.date << "." << endl;
+  cout << "Temperature: " << o.temperature << endl;
+  cout << "Elevation: " << o.elevation << endl;
+  cout << o.penguins << " penguins observed with " << o.precipitation << " precipitation." << endl;
+  
+  return 0;
+  
+}
+------------------------------------
+Q5)
+#include <iostream>
+#include <vector>
+using namespace std;
+    
+class BigCat {
+  public:
+    string species;
+    string common_name;
+    vector<string> habitat;
+    string genus = "panthera";
+  
+  BigCat(string sp, string cn, vector<string> h) {
+    species = sp;
+    common_name = cn;
+    habitat = h;
+  }
+};
+
+int main() {
+  
+  //add code below this line
+
+  BigCat snow_leopard("uncia", "snow leopard", {"Himalaya mountains", "Siberian mountains"});
+
+
+
+  //add code above this line
+  
+  cout << "A " << snow_leopard.common_name; 
+  cout << " is part of the " << snow_leopard.species << " species." << endl;
+  cout << "Their genus class is " << snow_leopard.genus << "." << endl;
+  cout << "Some of their habitats include: ";
+  for (auto a : snow_leopard.habitat) {
+    cout << a << ", ";
+  }
+  cout << "etc." << endl;
+  
+  return 0;
+  
+}
+-------------------------------------------------------------------
+WEEK 4
+---------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+class CelestialBody {
+private:
+  double earth_diameter = 12756.3;
+
+public:
+  CelestialBody(string n, double diam, double dist, int m) {
+    name = n;
+    diameter = diam;
+    distance = dist;
+    moons = m;
+  }
+  
+  string name;
+  double diameter;
+  double distance;
+  int moons;
+
+  double ComparedToEarth() {
+    double relative_size = diameter / earth_diameter;
+    return relative_size;
+  }
+};
+
+int main() {
+  
+  CelestialBody planet("Jupiter", 142984, 778360000, 79);
+  
+  cout << planet.ComparedToEarth() << endl;
+
+  return 0;
+  
+}
+------------------------------------------------------------
+Q2)
+#include <iostream>
+using namespace std;
+
+//add class definitions below this line
+
+class CelestialBody {
+  public:
+    CelestialBody(string n, double diam, double dist, int m) {
+      name = n;
+      diameter = diam;
+      distance = dist;
+      moons = m;
+    }
+    string CloserToSun(CelestialBody cb) {
+      if (distance < cb.distance) {
+        return name;
+      }
+      else {
+        return cb.name;
+      }
+    }
+    
+  private:
+    string name;
+    double diameter;
+    double distance;
+    int moons;
+};
+
+//add class definitions above this line   
+
+int main() {
+  
+  //DO NOT EDIT the code below
+  
+  CelestialBody mercury("Mercury", 4879.4, 57909000, 0);
+  CelestialBody venus("Venus", 12103.6, 108160000, 0);
+  cout << mercury.CloserToSun(venus) << endl;
+
+  //DO NOT EDIT the code above
+  
+  return 0;
+  
+}
+-----------------------------------------------------------
+Q3)
+#include <iostream>
+using namespace std;
+
+//add class definitions below this line
+
+class Mass {
+  public:
+    Mass(double mg, double g, double kg) {
+      milligrams = mg;
+      grams = g;
+      kilograms = kg;
+    }
+    double TotalWeight() {
+      return ((milligrams / 1000) + grams + (kilograms * 1000));
+    }
+    string CompareWeight(Mass m) {
+      double mass1 = TotalWeight();
+      double mass2 = m.TotalWeight();
+      if (mass1 > mass2) {
+        return "The first object is heavier.";
+      }
+      else if (mass2 > mass1) {
+        return "The second object is heavier.";
+      }
+      else {
+        return "The two objects weigh the same.";
+      }
+    }
+  
+  private:
+    double milligrams;
+    double grams;
+    double kilograms;
+};
+
+//add class definitions above this line   
+
+int main() {
+  
+  //DO NOT EDIT the code below
+
+  Mass m1(800, 17, 3);
+  Mass m2(730, 38, 2);
+  cout << m1.TotalWeight() << endl;
+  cout << m2.TotalWeight() << endl;
+  cout << m1.CompareWeight(m2) << endl;
+
+  //DO NOT EDIT the code above
+  
+  return 0;
+  
+}
+-----------------------------------------------------------
+Q4)
+#include <iostream>
+using namespace std;
+
+//add class definitions below this line
+
+class MarbleBag {
+  public:
+    MarbleBag(int r, int b, int y) {
+      red = r;
+      blue = b;
+      yellow = y;
+    }
+    int AddRed(int amount) {
+      return red += amount;
+    }
+    int AddBlue(int amount) {
+      return blue += amount;
+    }
+    int AddYellow(int amount) {
+      return yellow += amount;
+    }
+    int RedTotal() {
+      return red;
+    }
+    int BlueTotal() {
+      return blue;
+    }
+    int YellowTotal() {
+      return yellow;
+    }
+    int BagTotal() {
+      return red + blue + yellow;
+    }
+
+  private:
+    int red;
+    int blue;
+    int yellow;
+};
+
+//add class definitions above this line   
+
+int main() {
+  
+  //DO NOT EDIT code below this line
+  
+  MarbleBag bag(12, 8, 19);
+  bag.AddRed(4);
+  bag.AddBlue(12);
+  bag.AddYellow(-1);
+  bag.AddBlue(-3);
+  cout << "There are " << bag.RedTotal() << " red marbles." << endl;
+  cout << "There are " << bag.BlueTotal() << " blue marbles." << endl;
+  cout << "There are " << bag.YellowTotal() << " yellow marbles." << endl;
+  cout << "There are " << bag.BagTotal() << " total marbles." << endl;
+
+  //DO NOT EDIT code above this line
+  
+  return 0;
+  
+}
+-----------------------------------------------------------------
+Q5)
+#include <iostream>
+using namespace std;
+
+//add class definitions below this line
+
+class Subway {
+  public:
+    Subway() {
+      passengers = 0;
+      total_fares = 0;
+    }
+    int GetPassengers() {
+      return passengers;
+    }
+    void Board(int p) {
+      if (p >= 0) {
+        passengers += p;
+        CalculateFares(p);
+      }
+    }
+    void Disembark(int p) {
+      if (p >= 0) {
+        if (passengers - p < 0) {
+          passengers = 0;
+        }
+        else {
+          passengers -= p;
+        }
+      }
+    }
+    double GetFares() {
+      return total_fares;
+    }
+    
+  private:
+    const double fare = 2.40; //variable cannot be reassigned
+    int passengers;
+    double total_fares;
+
+    void CalculateFares(int p) { //private helper class function
+      total_fares += p * fare;
+    }
+};
+
+//add class definitions above this line   
+
+int main() {
+  
+  //DO NOT EDIT code below this line
+
+  Subway s;
+  cout << s.GetPassengers() << endl;
+  s.Board(23);
+  s.Disembark(12);
+  cout << s.GetPassengers() << endl;
+  cout << s.GetFares() << endl;
+
+  //DO NOT EDIT code above this line
+  
+  return 0;
+  
+}
+-------------------------------------------------------------
